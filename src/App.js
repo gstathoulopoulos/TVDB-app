@@ -18,7 +18,7 @@ class App extends React.Component {
     const api_call = await fetch(
       `https://api.thetvdb.com/search/series?name=${Title}`
     );
-    //const data = await api_call.json();
+    const data = await api_call.json();
     const response = await api_call.response();
     console.log(`***After`);
     //console.log(response);
