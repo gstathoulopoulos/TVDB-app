@@ -5,9 +5,7 @@ import Titles from "./components/Titles";
 import Form from "./components/Form";
 //import Weather from "./components/Weather";
 
-const API_KEY = "IY3JFFL7JRCNNA7V";
-const USER_KEY = "0VLSLJEEW1KO94E8";
-const USERNAME = "bigbearanesq1z";
+const ROOT_URL  = "http://api.tvmaze.com";
 
 class App extends React.Component {
   getInfo = async e => {
@@ -16,7 +14,7 @@ class App extends React.Component {
     console.log(`** componentWillMount`);
     const Title = e.target.elements.Title.value;
     const api_call = await fetch(
-      `https://api.thetvdb.com/search/series?name=${Title}`
+      `${ROOT_URL}/search/shows?q==${Title}`
     );
     const data = await api_call.json();
     const response = await api_call.response();
